@@ -1,16 +1,37 @@
 <template>
     <page-header></page-header>
     <div class="grid w-100 grid-cols-2 grid-rows-2 h-screen">
-        <recently-viewed></recently-viewed>
+        <home-card v-if="data" :data="data.recentlyViewed"></home-card>
+        <home-card v-if="data" :data="data.favourites"></home-card>
+        <home-card v-if="data" :data="data.favourites"></home-card>
+        <home-card v-if="data" :data="data.favourites"></home-card>
     </div>
 </template>
 
 <script>
-    import RecentlyViewed from '@/js/components/Home/RecentlyViewed'
+    import HomeCard from '@/js/components/Home/HomeCard'
 
     export default {
+        data() {
+            return {
+                data:
+                    {
+                        recentlyViewed: [
+                            {title: 'Recently Viewed'},
+                            {contents: ['Sexy ramen', 'Butt of Caroline', 'Sexy spaghetti', 'Less sexy penne']}
+                        ],
+                        favourites: [
+                            {title: 'Favourites'},
+                            {contents: ['Sweet Caroline']}
+                        ]
+                    }
+            }
+        },
+        mounted() {
+        },
+
         components: {
-            RecentlyViewed
+            HomeCard
         }
     }
 </script>
