@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/js/components/Index';
+import Home from '@/js/components/Home/Index';
 import CreateRecipe from '@/js/components/CreateRecipe/Index'
 
 export default createRouter({
