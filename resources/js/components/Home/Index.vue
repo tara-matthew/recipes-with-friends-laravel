@@ -1,6 +1,6 @@
 <template>
     <page-header></page-header>
-    <div class="grid w-100 grid-cols-2 grid-rows-2 h-screen">
+    <div class="grid w-100 grid-cols-2 grid-rows-2 h-viewport-without-header">
         <home-card v-if="data" :data="data.recentlyViewed"></home-card>
         <home-card v-if="data" :data="data.favourites"></home-card>
         <home-card v-if="data" :data="data.recentlyAdded"></home-card>
@@ -21,15 +21,15 @@
                     },
                     favourites: {
                         title: 'Favourites',
-                        contents: ['Sweet Caroline']
+                        contents: ['Sweet Caroline','Sweet Caroline','Sweet Caroline','Sweet Caroline']
                     },
                     recentlyAdded: {
                         title: 'Recently Added',
-                        contents: ['Carolime Clark']
+                        contents: ['Carolime Clark', 'Carol','Sweet Caroline','Sweet Caroline']
                     },
                     mostSearched: {
                         title: 'Most Searched',
-                        contents: ['Carolime Clark', 'Carol', 'Food', 'Tasty']
+                        contents: ['Carolime Clark', 'Carol']
                     },
                 }
             }

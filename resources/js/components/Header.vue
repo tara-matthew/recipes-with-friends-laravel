@@ -1,5 +1,5 @@
 <template>
-    <nav class="mx-auto bg-green-400 p-5 flex justify-between">
+    <nav class="mx-auto bg-green-400 p-5 flex justify-between h-16">
         <div>
             <a>Recipes With Friends</a>
         </div>

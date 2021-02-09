@@ -7,12 +7,16 @@ module.exports = {
                 '1/4': '25%',
             },
             height: {
-                'without-header': 'calc(100% - 3rem)'
+                'without-header': 'calc(100% - 3rem)',
+                'viewport-without-header': 'calc(100vh - 5rem)'
             }
         },
     },
     variants: {
-        extend: {},
+        extend: {
+            borderWidth: ['last'],
+            margin: ['odd'],
+        },
     },
     plugins: [],
 }
