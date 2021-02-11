@@ -1,6 +1,6 @@
 <template>
     <page-header></page-header>
-    <recipe-details v-if="Object.keys(recipes).length !== 0" :recipes="recipes"></recipe-details>
+    <recipe-details v-if="Object.keys(recipes).length !== 0" :recipes="recipes" @updateRecipes="recipes = $event"></recipe-details>
 </template>
 
 <script>

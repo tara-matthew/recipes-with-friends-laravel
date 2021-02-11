@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Recipe;
+use App\Services\RecipeService;
 
 class RecipeController extends Controller
 {
     protected $recipes;
 
-    public function __construct(Recipe $recipes)
+    public function __construct(RecipeService $recipes)
     {
         $this->recipes = $recipes;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -20,7 +22,7 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        return Recipe::all();
+        return $this->recipes->retrieve();
     }
 
     /**
