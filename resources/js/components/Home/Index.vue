@@ -1,10 +1,10 @@
 <template>
     <page-header></page-header>
     <div class="grid w-100 grid-cols-2 grid-rows-2 h-viewport-without-header">
-        <home-card v-if="data" :data="data.recentlyViewed"></home-card>
-        <home-card v-if="data" :data="data.favourites"></home-card>
-        <home-card v-if="data" :data="data.recentlyAdded"></home-card>
-        <home-card v-if="data" :data="data.mostSearched"></home-card>
+        <home-card v-if="data.recentlyViewed.contents.length > 0" :data="data.recentlyViewed"></home-card>
+        <home-card v-if="data.favourites.contents.length > 0" :data="data.favourites"></home-card>
+        <home-card v-if="data.recentlyAdded.contents.length > 0" :data="data.recentlyAdded"></home-card>
+        <home-card v-if="data.mostSearched.contents.length > 0" :data="data.mostSearched"></home-card>
     </div>
 </template>
 
@@ -17,24 +17,32 @@
                 data: {
                     recentlyViewed: {
                         title: 'Recently Viewed',
-                        contents: ['Sexy ramen', 'Butt of Caroline', 'Sexy spaghetti', 'Less sexy penne']
+                        contents: []
                     },
                     favourites: {
                         title: 'Favourites',
-                        contents: ['Sweet Caroline','Sweet Caroline','Sweet Caroline','Sweet Caroline']
+                        contents: []
                     },
                     recentlyAdded: {
                         title: 'Recently Added',
-                        contents: ['Carolime Clark', 'Carol','Sweet Caroline','Sweet Caroline']
+                        contents: []
                     },
                     mostSearched: {
                         title: 'Most Searched',
-                        contents: ['Carolime Clark', 'Carol']
+                        contents: []
                     },
-                }
+                },
+                recipes: {}
             }
         },
         mounted() {
+            window.axios.get('/api/recipes').then(response => {
+                this.data.recentlyAdded.contents = response.data;
+                //TODO Change these as relevant controllers are built
+                this.data.recentlyViewed.contents = response.data;
+                this.data.favourites.contents = response.data;
+                this.data.mostSearched.contents = response.data;
+            })
         },
 
         components: {
