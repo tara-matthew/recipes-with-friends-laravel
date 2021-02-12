@@ -3,9 +3,18 @@
 namespace App\Services;
 
 use App\Models\Recipe;
+use Illuminate\Support\Facades\Cache;
+use App\Http\Helpers\Sort;
 
 class RecipeService
 {
+    protected $sortHelper;
+
+    public function __construct(Sort $sortHelper)
+    {
+        $this->sortHelper = $sortHelper;
+    }
+
     /**
      * Return all recipes with sorting options
      * @return mixed
@@ -15,16 +24,18 @@ class RecipeService
         $orderBy = 'created_at';
         $orderDirection = 'desc';
 
-        //TODO This could probably go into a helper method if it's something I'll be doing in other parts of the app
         if (count(request()->all())) {
-            if (request()->get('sort')) {
-                $orderBy = request()->get('sort');
-            }
-            if (request()->get('direction')) {
-                $orderDirection = request()->get('direction');
-            }
+            $request = request()->all();
+            $sortParameters = $this->sortHelper->calculateSortParameters($request);
+            $orderBy = $sortParameters[0];
+            $orderDirection = $sortParameters[1];
         }
 
-        return Recipe::orderBy($orderBy, $orderDirection)->get();
+        $cacheKey = 'recipes-' . $orderBy . '-' . $orderDirection;
+
+        return Cache::remember($cacheKey, 300, function() use ($orderBy, $orderDirection) {
+            return Recipe::orderBy($orderBy, $orderDirection)->get();
+        });
+
     }
 }
