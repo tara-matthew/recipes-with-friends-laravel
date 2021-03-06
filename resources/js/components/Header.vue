@@ -1,7 +1,7 @@
 <template>
     <nav class="mx-auto bg-green-400 p-5 flex justify-between h-16">
         <div>
-            <a>Recipes With Friends</a>
+            <a><router-link to="/">Recipes With Friends</router-link></a>
         </div>
         <ul class="flex flex-column">
             <li class="pr-5"><router-link to="/recipes">All Recipes</router-link></li>
