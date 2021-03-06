@@ -5,9 +5,11 @@
         <button v-on:click="sortReverseAlphabetically" class="border-4 border-black mr-3">Sort Reverse Alphabetically</button>
         <button v-on:click="sortByLatest" class="border-4 border-black mr-3">Sort By Latest</button>
     </div>
-    <div class="text-center" v-if="recipes" v-for="recipe in recipes" :key="recipe">
-        <p class="font-bold">{{ recipe.title }}</p>
-        <p>{{ recipe.story }}</p>
+    <div class="text-center m-0 m-auto w-3/6 hover:bg-blue-200" v-if="recipes" v-for="recipe in recipes" :key="recipe">
+        <router-link :to="{ path: '/recipes/' + recipe.id }">
+            <p class="font-bold">{{ recipe.title }}</p>
+            <p>{{ recipe.story }}</p>
+        </router-link>
     </div>
 </template>
 
