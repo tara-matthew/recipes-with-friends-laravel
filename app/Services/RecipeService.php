@@ -36,6 +36,13 @@ class RecipeService
         return Cache::remember($cacheKey, 300, function() use ($orderBy, $orderDirection) {
             return Recipe::orderBy($orderBy, $orderDirection)->get();
         });
+    }
 
+    public function show($id)
+    {
+        $cacheKey = 'recipe-' . $id;
+        return Cache::remember($cacheKey, 300, function() use($id) {
+            return Recipe::find($id);
+        });
     }
 }

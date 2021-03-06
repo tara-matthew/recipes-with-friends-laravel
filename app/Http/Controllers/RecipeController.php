@@ -54,7 +54,7 @@ class RecipeController extends Controller
      */
     public function show($id)
     {
-        //
+        return $this->recipes->show($id);
     }
 
     /**
