@@ -1,10 +1,11 @@
 <template>
     <page-header></page-header>
     <div class="grid w-100 grid-cols-2 grid-rows-2 h-viewport-without-header">
-        <home-card v-if="data.recentlyViewed.contents.length > 0" :data="data.recentlyViewed"></home-card>
-        <home-card v-if="data.favourites.contents.length > 0" :data="data.favourites"></home-card>
-        <home-card v-if="data.recentlyAdded.contents.length > 0" :data="data.recentlyAdded"></home-card>
-        <home-card v-if="data.mostSearched.contents.length > 0" :data="data.mostSearched"></home-card>
+        <keep-alive><home-card v-if="data.recentlyViewed.contents.length > 0" :data="data.recentlyViewed"></home-card></keep-alive>
+        <keep-alive><home-card v-if="data.favourites.contents.length > 0" :data="data.favourites"></home-card></keep-alive>
+        <keep-alive><home-card v-if="data.recentlyAdded.contents.length > 0" :data="data.recentlyAdded"></home-card></keep-alive>
+        <keep-alive><home-card v-if="data.mostSearched.contents.length > 0" :data="data.mostSearched"></home-card></keep-alive>
+
     </div>
 </template>
 
