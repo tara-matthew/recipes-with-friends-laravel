@@ -42,7 +42,7 @@ class RecipeService
     {
         $cacheKey = 'recipe-' . $id;
         return Cache::remember($cacheKey, 300, function() use($id) {
-            return Recipe::find($id);
+            return Recipe::findOrFail($id);
         });
     }
 }

@@ -54,6 +54,7 @@ class RecipeController extends Controller
      */
     public function show($id)
     {
+        //Pass Recipe object in here with route model binding?
         return $this->recipes->show($id);
     }
 
