@@ -1,10 +1,19 @@
 <template>
     <page-header></page-header>
-    <recipe-details v-if="Object.keys(recipe).length !== 0 && finished" :recipe="recipe"></recipe-details>
+    <div class="ml-4 mr-4 mt-4">
+        <div class="w-100 border-t-2 border-l-2 border-r-2 border-b-2 border-black">
+            <recipe-details v-if="Object.keys(recipe).length !== 0 && finished" :recipe="recipe"></recipe-details>
+        </div>
+        <div class="w-1/2 border-t-2 border-l-2 border-r-2 border-b-2 border-black">
+            <recipe-story :recipe="recipe"></recipe-story>
+        </div>
+    </div>
 </template>
 
-<script>
+<script lang="ts">
     import RecipeDetails from '@/js/components/ViewRecipe/Details'
+    import RecipeStory from '@/js/components/ViewRecipe/Story'
+
     export default {
         data() {
           return {
@@ -25,7 +34,8 @@
             })
         },
         components: {
-            RecipeDetails
+            RecipeDetails,
+            RecipeStory
         }
     }
 </script>
