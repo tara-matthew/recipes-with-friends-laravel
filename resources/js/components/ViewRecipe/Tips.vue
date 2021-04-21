@@ -1,5 +1,5 @@
 <template>
-    <panel componentClass="h-20">
+    <panel componentClass="h-40">
         <template v-slot:header>
             <h1>{{ title }}</h1>
         </template>
@@ -14,8 +14,9 @@
 export default {
     data() {
         return {
-            title: 'Story',
-            description: 'An old recipe from my mother',
+            title: 'Hot Tips',
+            description: "Don't burn the onions",
+            componentClass: 'h-60'
         }
     },
     props: {
