@@ -1,7 +1,7 @@
 <template>
     <panel componentClass="h-20">
         <template v-slot:header>
-            <h1>{{ title }}</h1>
+            <h1 class="text-white text-xl">{{ title }}</h1>
         </template>
 
         <template v-slot:body>

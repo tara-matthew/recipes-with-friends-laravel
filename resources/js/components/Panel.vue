@@ -1,8 +1,8 @@
 <template>
-    <div class="border-b-2 border-black h-12 flex items-center justify-center">
+    <div class="bg-green-panel h-12 flex items-center justify-center">
         <slot name="header"></slot>
     </div>
-    <div :class="componentClass" class="border-b-2 border-black p-4">
+    <div :class="componentClass" class="p-4">
         <slot name="body"></slot>
     </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
     <panel>
         <template v-slot:header>
-            <h1>{{ recipe.title }}</h1>
+            <h1 class="text-white text-xl">{{ recipe.title }}</h1>
         </template>
 
         <template v-slot:body>

@@ -1,5 +1,5 @@
 <template>
-    <nav class="mx-auto bg-green-400 p-5 flex justify-between h-16">
+    <nav class="mx-auto bg-green-header p-5 flex justify-between h-16">
         <div>
             <a><router-link to="/">Recipes With Friends</router-link></a>
         </div>

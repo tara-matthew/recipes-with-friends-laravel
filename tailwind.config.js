@@ -9,8 +9,15 @@ module.exports = {
             height: {
                 'without-header': 'calc(100% - 3rem)',
                 'viewport-without-header': 'calc(100vh - 5rem)'
+            },
+            colors: {
+                green: {
+                    header: '#92D1C2',
+                    panel: '#08AC84'
+                }
             }
-        },
+        }
+
     },
     variants: {
         extend: {
