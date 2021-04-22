@@ -1,5 +1,5 @@
 <template>
-    <panel-outer-container class="w-2/3">
+    <panel-outer-container containerClass="w-2/3">
         <panel componentClass="h-60">
             <template v-slot:header>
                 <h1 class="text-white text-xl">{{ title }}</h1>

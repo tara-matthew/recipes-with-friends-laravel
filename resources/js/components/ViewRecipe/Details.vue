@@ -1,5 +1,5 @@
 <template>
-    <panel-outer-container class="w-full">
+    <panel-outer-container containerClass="w-full">
         <panel>
             <template v-slot:header>
                 <h1 class="text-white text-xl">{{ recipe.title }}</h1>
