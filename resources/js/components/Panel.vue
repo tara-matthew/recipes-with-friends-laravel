@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-green-panel h-12 flex items-center justify-center">
+    <div class="bg-green-panel h-12 flex items-center justify-center rounded-t-md">
         <slot name="header"></slot>
     </div>
     <div :class="componentClass" class="p-4">

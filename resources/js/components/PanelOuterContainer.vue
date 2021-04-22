@@ -1,5 +1,5 @@
 <template>
-    <div class="inline-block shadow-md" :class="containerClass">
+    <div class="inline-block shadow-md rounded-b-md" :class="containerClass">
         <slot></slot>
     </div>
 </template>
