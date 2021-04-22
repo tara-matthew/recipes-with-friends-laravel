@@ -1,17 +1,19 @@
 <template>
-    <panel componentClass="h-60">
-        <template v-slot:header>
-            <h1 class="text-white text-xl">{{ title }}</h1>
-        </template>
+    <outer-container class="w-1/3 mr-12">
+        <panel componentClass="h-60">
+            <template v-slot:header>
+                <h1 class="text-white text-xl">{{ title }}</h1>
+            </template>
 
-        <template v-slot:body>
-            <ul>
-                <li v-for="ingredient in ingredients">
-                    {{ ingredient }}
-                </li>
-            </ul>
-        </template>
-    </panel>
+            <template v-slot:body>
+                <ul>
+                    <li v-for="ingredient in ingredients">
+                        {{ ingredient }}
+                    </li>
+                </ul>
+            </template>
+        </panel>
+    </outer-container>
 </template>
 
 <script>

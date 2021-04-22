@@ -7,29 +7,19 @@
         </div>
 
         <div class="flex items-center mb-10">
-            <div class="w-1/2 inline-block mr-12 shadow-md">
-                <recipe-story :recipe="recipe"></recipe-story>
-            </div>
-
-            <div class="w-1/2 inline-block shadow-md">
-                <recipe-tips :recipe="recipe"></recipe-tips>
-            </div>
+            <recipe-story :recipe="recipe"></recipe-story>
+            <recipe-tips :recipe="recipe"></recipe-tips>
         </div>
 
         <div class="flex mb-10">
-            <div class="w-1/3 inline-block mr-12 shadow-md">
-                <recipe-ingredients></recipe-ingredients>
-            </div>
-
-            <div class="w-2/3 inline-block shadow-md">
-                <recipe-steps></recipe-steps>
-            </div>
+            <recipe-ingredients></recipe-ingredients>
+            <recipe-steps></recipe-steps>
         </div>
 
     </div>
 </template>
 
-<script lang="js">
+<script>
     import RecipeDetails from '@/js/components/ViewRecipe/Details'
     import RecipeStory from '@/js/components/ViewRecipe/Story'
     import RecipeTips from '@/js/components/ViewRecipe/Tips'
