@@ -5,6 +5,7 @@ import App from '@/js/views/App';
 import PageHeader from '@/js/components/Header';
 import Panel from '@/js/components/Panel';
 import PanelOuterContainer from '@/js/components/PanelOuterContainer';
+import Container from '@/js/components/Container';
 const app = createApp(App);
 
 app.use(router);
@@ -13,5 +14,6 @@ app.use(router);
 app.component('PageHeader', PageHeader);
 app.component('Panel', Panel);
 app.component('PanelOuterContainer', PanelOuterContainer);
+app.component('Container', Container);
 
 app.mount('#app');
