@@ -1,8 +1,7 @@
 <template>
     <page-header></page-header>
     <div class="ml-4 mr-4 mt-4">
-
-        <div class="mb-10 shadow-md">
+        <div class="mb-10">
             <recipe-details v-if="Object.keys(recipe).length !== 0 && finished" :recipe="recipe"></recipe-details>
         </div>
 
@@ -15,7 +14,6 @@
             <recipe-ingredients></recipe-ingredients>
             <recipe-steps></recipe-steps>
         </div>
-
     </div>
 </template>
 

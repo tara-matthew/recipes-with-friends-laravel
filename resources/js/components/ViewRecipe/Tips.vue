@@ -1,5 +1,5 @@
 <template>
-    <outer-container class="w-1/2 mr-12">
+    <panel-outer-container class="w-1/2 mr-12">
         <panel componentClass="h-40">
             <template v-slot:header>
                 <h1 class="text-white text-xl">{{ title }}</h1>
@@ -9,7 +9,7 @@
                 <p>{{ description }}</p>
             </template>
         </panel>
-    </outer-container>
+    </panel-outer-container>
 </template>
 
 <script>

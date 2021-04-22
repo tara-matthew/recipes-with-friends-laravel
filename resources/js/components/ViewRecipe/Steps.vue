@@ -1,5 +1,5 @@
 <template>
-    <outer-container class="w-2/3">
+    <panel-outer-container class="w-2/3">
         <panel componentClass="h-60">
             <template v-slot:header>
                 <h1 class="text-white text-xl">{{ title }}</h1>
@@ -13,7 +13,7 @@
                 </ul>
             </template>
         </panel>
-    </outer-container>
+    </panel-outer-container>
 </template>
 
 <script>

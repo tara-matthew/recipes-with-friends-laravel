@@ -4,7 +4,7 @@ import router from '@/js/routes.js';
 import App from '@/js/views/App';
 import PageHeader from '@/js/components/Header';
 import Panel from '@/js/components/Panel';
-import OuterContainer from '@/js/components/OuterContainer';
+import PanelOuterContainer from '@/js/components/PanelOuterContainer';
 const app = createApp(App);
 
 app.use(router);
@@ -12,6 +12,6 @@ app.use(router);
 //Register the Header component globally
 app.component('PageHeader', PageHeader);
 app.component('Panel', Panel);
-app.component('OuterContainer', OuterContainer);
+app.component('PanelOuterContainer', PanelOuterContainer);
 
 app.mount('#app');
